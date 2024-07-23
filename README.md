@@ -3,6 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 First, run the development server:
+Login email:guinkluolan@gmail.com
+password: NoellaUmutoni123
 
 ```bash
 npm run dev
