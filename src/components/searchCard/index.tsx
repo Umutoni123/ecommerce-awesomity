@@ -7,7 +7,8 @@ const SearchCard = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  const searchRef = useRef(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+
 
   const handleInputChange = (event: {
     target: { value: SetStateAction<string> };
@@ -25,10 +26,11 @@ const SearchCard = () => {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (searchRef.current && !searchRef.current.contains(event.target)) {
+    if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
       setShowResults(false); 
     }
   };
+  
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
