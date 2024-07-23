@@ -40,22 +40,24 @@ const Login = () => {
   });
 
   return (
-    <div className="h-screen bg-[#E3E3E3] flex justify-center items-center p-2">
-      <div className="lg:w-[800px] lg:flex lg:flex-col lg:gap-5">
-        <div className="lg:w-[800px] border rounded-lg flex">
-          <Card />
+    <div className="h-screen bg-[#E3E3E3] flex justify-center items-center p-4 sm:p-6 md:p-8 lg:p-10">
+      <div className="w-full max-w-[800px] flex flex-col gap-5">
+        <div className="w-full flex flex-col lg:flex-row border rounded-lg overflow-hidden">
+          
+            <Card />
+          
           <form
             onSubmit={formik.handleSubmit}
-            className="bg-[#FFFFFF] p-10 flex flex-col gap-10"
+            className="w-full lg:w-1/2 bg-[#FFFFFF] p-6 sm:p-8 md:p-10 flex flex-col gap-6 sm:gap-8 md:gap-10"
           >
-            <span className="font-dm-sans text-2xl font-black leading-[31.25px] text-left">
+            <span className="font-dm-sans text-2xl font-black leading-[31.25px] text-center lg:text-left">
               Login
             </span>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-4 sm:gap-5">
               <div className="gap-2">
                 <label
                   htmlFor="email"
-                  className="font-dm-sans text-[10px] font-semibold leading-[13.02px] text-left"
+                  className="font-dm-sans text-[10px] sm:text-xs font-semibold leading-[13.02px] text-left"
                 >
                   Email
                 </label>
@@ -64,7 +66,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className="px-4 py-2 rounded-tl-lg rounded-tr-none rounded-br-none rounded-bl-none bg-[#0C0C0D0A] pl-10"
+                    className="w-full px-4 py-2 rounded-lg  bg-[#0C0C0D0A] pl-10"
                     placeholder="Enter your email"
                     onChange={formik.handleChange}
                     value={formik.values.email}
@@ -74,14 +76,14 @@ const Login = () => {
                     alt="email"
                     width={16}
                     height={16}
-                    className="fas fa-envelope absolute left-[12px] top-[50%] transform -translate-y-[50%] text-gray-400"
+                    className="absolute left-[12px] top-[50%] transform -translate-y-[50%] text-gray-400"
                   />
                 </div>
               </div>
               <div className="">
                 <label
                   htmlFor="password"
-                  className="font-dm-sans text-[10px] font-semibold leading-[13.02px] text-left"
+                  className="font-dm-sans text-[10px] sm:text-xs font-semibold leading-[13.02px] text-left"
                 >
                   Password
                 </label>
@@ -90,7 +92,7 @@ const Login = () => {
                     type="password"
                     id="password"
                     name="password"
-                    className="px-4 py-2 rounded-tl-lg rounded-tr-none rounded-br-none rounded-bl-none opacity-100 bg-[#0C0C0D0A] pl-10 pr-10"
+                    className="w-full px-4 py-2 rounded-lg  bg-[#0C0C0D0A] pl-10 pr-10"
                     placeholder="Enter your password"
                     onChange={formik.handleChange}
                     value={formik.values.password}
@@ -112,14 +114,12 @@ const Login = () => {
                 </div>
               </div>
             </div>
-            <div className="px-4 py-2 rounded-tl-lg rounded-tr-none rounded-br-none rounded-bl-none opacity-100 flex items-center gap-4">
-              <button className="px-0 py-2 flex gap-2" type="button">
-                <span className="font-dm-sans text-sm font-semibold leading-[18.23px] underline text-[#141C24]">
-                  Forgot password?
-                </span>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+              <button className="text-sm font-semibold underline text-[#141C24]" type="button">
+                Forgot password?
               </button>
               <button
-                className="px-8 py-2 gap-2 rounded-sm bg-[#C1CF16] flex items-center justify-center"
+                className="px-8 py-2 bg-[#C1CF16] rounded-sm flex items-center justify-center gap-2"
                 type="submit"
                 disabled={formik.isSubmitting}
               >
