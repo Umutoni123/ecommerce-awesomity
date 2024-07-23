@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;500;700&display=swap');
+
+/* Add other global styles below */
+
+/* styles/globals.css */
+.placeholder-custom::placeholder {
+  @apply text-left text-sm font-normal;
+  font-family: 'DM Sans', sans-serif;
+  
+  padding-left: 30px;
+  
+}
+
+
+
+@layer components {
+  .content-wrapper {
+    @apply w-[90.7%] mx-auto;
+  }
+}
